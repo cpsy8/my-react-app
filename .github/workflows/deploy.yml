@@ -3,7 +3,7 @@ name: Deploy Vite React App
 on:
   push:
     branches:
-      - main
+      - main # or your deployment branch
 
 jobs:
   build:
@@ -11,12 +11,12 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: 16
+          node-version: 16 # You can also specify 20 if you want to future-proof
 
       - name: Install dependencies
         run: npm install
